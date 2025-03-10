@@ -2,14 +2,6 @@ version: '3'
 
 services:
   web:
-    image: python:3.9
-    container_name: my_python_app
-    working_dir: /app
-    volumes:
-      - .:/app
+    build: ./web
     ports:
       - "5000:5000"
-    environment:
-      - FLASK_APP=app.py
-      - FLASK_RUN_HOST=0.0.0.0
-    command: ["flask", "run"]
